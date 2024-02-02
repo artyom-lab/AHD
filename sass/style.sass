@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette|Merriweather:400,400i,700|Montserrat:400,700|Raleway:400,500&display=swap')
+
+$transition: 0.3s
+
+$color-white: #FFF
+$color-black: #000
+$color-darkblue: #120F1C
+$color-darkgray: #16161E
+$color-turq: #76ECEA
+
+* 
+	outline: none !important
+
+img 
+	max-width: 100%
+	height: auto
+
+body 
+	font-family: 'Raleway', sans-serif
+	color: $color-darkblue
+	&:before 
+		content: ''
+		position: fixed
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		transition: $transition
+		background-color: $color-darkblue
+		background-image: url(../img/AHD.webp)
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: 300px
+		z-index: 9999
+		@media (max-width: 575.98px)
+			background-size: 200px
+
+.pace-container
+	overflow: hidden
+	opacity: 0
+	visibility: hidden
+	transition: $transition
+.pace-done 
+	&:before 
+		opacity: 0
+		visibility: hidden
+	.pace-container
+		opacity: 1
+		visibility: visible
+
+.pace
+	pointer-events: none
+	user-select: none
+	&-inactive
+		display: none
+	&-progress
+		position: fixed
+		top: 0
+		right: 100%
+		width: 100%
+		border-top: 3px solid $color-white
+		z-index: 99999
+
+p 
+	margin-bottom: 20px
+
+a 
+	text-decoration: none !important
+	transition: $transition
+
+.courgette
+	font-family: 'Courgette', sans-serif
+
+@media (min-width: 1200px)
+	.container 
+		max-width: 1170px
+
+.row-7
+	margin-left: -7px !important
+	margin-right: -7px !important
+	> [class*="col"]
+		padding: 7px !important
+
+.navbar
+	background: transparent
+	transition: $transition
+	@media (min-width: 576px)
+		padding: 16px 0
+	.navbar-brand
+		font-family: 'Courgette', sans-serif
+		font-size: 26px
+		color: $color-white
+		svg
+			transition: $transition
+			width: 56px
+			fill: $color-white
+		@media (max-width: 575.98px)
+			font-size: 20px
+			svg 
+				width: 40px
+		div
+			line-height: 0.8
+	&.sticky	
+		background: rgba(18, 15, 28, 0.85)
+		padding: 8px 0
+		border-bottom: 1px solid #3F3F3F
+		.navbar-brand
+			color: $color-turq
+			svg 
+				fill: $color-turq
+
+.social
+	a 
+		width: 44px
+		height: 44px
+		line-height: 44px
+		font-size: 22px
+		text-align: center
+		border-radius: 100px
+		transition: $transition
+		color: $color-white
+		&:hover
+			opacity: 1
+			transform: scale(1.1)
+		&.fa-instagram
+			background: linear-gradient(to bottom right, #4584F7 5%, #8841F3 20%, #DF3D52 50%, #EED000 100%)
+		&.fa-linkedin-in
+			background: #3D7AB9
+		&.fa-facebook-f
+			background: #4867AA
+		&.fa-upwork
+			background: #50A907
+		&.fa-x-twitter
+			background: $color-black
+			border: 1px solid #3F3F3F
+
+.page-header
+	height: 100vh
+	padding-top: 92px
+	padding-bottom: 92px
+	text-align: center
+	display: flex
+	flex-direction: column
+	justify-content: center
+	position: relative
+	overflow: hidden
+	background-size: cover
+	background-position: center center
+	.comment
+		text-transform: uppercase
+		font-weight: bold
+		font-size: 22px
+		color: $color-white
+		font-family: 'Montserrat', sans-serif
+		letter-spacing: 2.7px
+		text-shadow: 3.5px 8.3px 10px rgba(18, 15, 28, 0.85)
+		@media (max-width: 575.98px)
+			font-size: 18px
+
+.avatar
+	width: 50px
+	height: 50px
+	border-radius: 100px
+	background-image: url(../img/avatar.webp)
+	background-size: cover
+	background-position: center center
+	display: block
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6
+	font-family: 'Montserrat', sans-serif
+	font-weight: bold
+	text-transform: uppercase
+
+.h1, h1
+	font-size: 50px
+	letter-spacing: 2.7px
+	color: $color-white
+	text-shadow: 3.5px 8.3px 10px rgba(18, 15, 28, 0.85)
+	@media (max-width: 575.98px)
+		font-size: 40px
+
+.h2, h2 
+	font-size: 38px
+	letter-spacing: 2.28px
+	color: $color-white
+	@media (max-width: 991.98px)
+		font-size: 30px
+
+.h3, h3 
+	font-size: 18px
+	font-family: 'Merriweather', sans-serif
+	color: #76ECEA
+
+.h5, h5 
+	font-size: 20px
+	font-family: 'Merriweather', sans-serif
+	color: $color-white
+	letter-spacing: 1px
+	font-weight: bold
+
+.h6, h6 
+	font-size: 18px
+	font-family: 'Merriweather', sans-serif
+	color: $color-white
+	font-weight: normal
+	opacity: .6
+
+.section-1 
+	padding: 120px 0 
+	background-color: $color-darkblue
+	@media (max-width: 991.98px) 
+		padding: 70px 0 
+
+.card-about
+	color: $color-white
+	font-family: 'Merriweather', sans-serif
+	line-height: 1.75
+	opacity: .75
+	border: 1px solid #3F3F3F
+	padding: 24px
+	border-radius: 15px
+	background: $color-darkgray
+	display: flex
+	flex-direction: column
+
+ul 
+	li 
+		color: $color-turq
+		span 
+			color: $color-white
+
+.section-owl
+	background: $color-darkgray
+	padding: 120px 0 170px
+	@media (max-width: 991.98px) 
+		padding: 70px 0 120px
+	.card-about
+		min-height: 345px
+
+.owl-1 
+	.owl-item 
+		cursor: ew-resize
+	.owl-nav 
+		position: absolute
+		margin-top: 12px
+		right: -15px
+		@media (max-width: 991.98px) 
+			right: 50%
+			transform: translateX(50%)
+		.owl-prev, .owl-next
+			background-color: $color-turq !important
+			box-shadow: 2.3px 5.5px 11px 0 rgba(20, 20, 21, 0.1) !important
+			width: 50px
+			transition: $transition
+			height: 50px
+			line-height: 50px !important
+			border-radius: 3px
+			margin: 0 15px !important
+			position: relative
+			&:hover:not(.disabled) 
+					filter: brightness(1.5) 
+			span 
+				color: $color-darkblue
+				font-size: 42px
+				font-weight: bold
+				position: absolute
+				top: 22px
+				left: 25px
+				transform: translate(-50%, -50%)
+
+.bg-darkgray
+	background: $color-darkgray
+
+.bg-darkblue
+	background: $color-darkblue
+
+.bg-1
+	background-image: url(../img/bg.svg)
+	background-repeat: no-repeat
+	background-position: center center
+	background-size: cover
+
+.img-box
+	overflow: hidden
+	border-radius: 15px
+
+.link-know
+	text-transform: uppercase
+	color: $color-white
+	&:hover
+		color: $color-turq
+
+.know-more
+	font-size: 18px
+	text-transform: uppercase
+	color: $color-white
+	&:hover
+		color: $color-turq
+
+.service-box
+	background-size: cover !important
+	background-position: center center
+	position: relative
+	height: 100%
+	.service-content
+		display: flex
+		flex-direction: column
+		color: $color-white
+		min-height: 400px
+		height: 100%
+		background: rgba(0, 0, 0, .5)
+		padding: 180px 60px 48px 
+		@media (max-width: 991.98px) 
+			padding: 60px 15px 24px 
+	.box-hover
+		display: flex
+		flex-direction: column
+		position: absolute
+		background-color: rgba(109, 246, 235, .98)
+		padding: 60px 60px 48px
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		visibility: hidden
+		opacity: 0
+		transition: .5s
+		@media (max-width: 991.98px) 
+			padding: 60px 15px 24px 
+		> * 
+			color: $color-darkgray
+		.close
+			color: $color-darkgray
+			&:hover 
+				opacity: .7
+		&.active 
+			visibility: visible
+			opacity: 1
+
+.fz-18
+	font-size: 18px
+
+.fw-500
+	font-weight: 500
+
+.op-8 
+	opacity: .8
+
+.footer 
+	padding: 90px 0 
+	background-color: $color-darkblue
+	text-align: center
+	color: $color-white
+	font-family: 'Montserrat', sans-serif
+	@media (max-width: 991.98px) 
+		padding: 70px 0 
+	.list-social 
+		margin-bottom: 30px
+		font-size: 0
+		a 
+			background-color: rgba(141, 141, 141, .34)
+			color: #faf4f4
+			padding: 9px
+			min-width: 46px
+			font-size: 24px
+			&:hover 
+				background-color: $color-turq
+				color: $color-black
+
+.to-up 
+	position: fixed
+	bottom: 20px
+	right: 20px
+	transition: $transition
+	z-index: 22
+	display: none
+	cursor: pointer
+	svg 
+		rect
+			transition: $transition
+	@media (max-width: 1199.98px)
+		right: 10px
+		bottom: 15px
+	&:hover 
+		opacity: 1
+		svg 
+			rect 
+				fill: $color-turq
+
+.my-slider
+	margin-top: 48px
+	.slider-wrap
+		position: relative
+		display: flex
+		overflow: hidden
+		user-select: none
+		.slides
+			flex-shrink: 0
+			display: flex
+			// counter-reset: item
+			justify-content: space-around
+			min-width: 100%
+			@media (max-width: 1199.98px)
+				gap: 20px
+			.item
+				background: $color-darkgray
+				font-family: 'Montserrat', sans-serif
+				flex: 0 0 auto
+				border-radius: 100px
+				border: 2px solid #3F3F3F
+				display: flex
+				justify-content: center
+				align-items: center
+				font-size: 20px
+				margin: 0 20px
+				padding: 10px 30px
+				font-weight: bold
+				color: $color-white
+				opacity: .75
+				margin: 10px 0
+				transition: all 0.1s ease-in-out
+				&.item-blue
+					color: $color-turq
+					border-color: $color-turq
+					background: $color-darkblue
+
+.marquee
+	animation: scroll 50s linear infinite
+
+.reverce
+	animation-direction: reverse
+
+.slider-wrap:hover .marquee
+	animation-play-state: paused
+
+@keyframes scroll
+	from
+		transform: translateX(0)
+	to
+		transform: translateX(calc(-100% - 20px))
+
+@import theme
+
+
+
+
+
+
+
+
+
+
+
+
+
+
